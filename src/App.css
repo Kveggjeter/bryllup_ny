@@ -75,3 +75,67 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 1px red solid;
 }
+
+.rsvp-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.form-group input {
+  max-width: 50%;
+  height: 30px;
+  margin-top: 7px;
+  border-radius: 7px;
+}
+
+.form-label {
+  color: #F3F0DD;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.radio-label {
+  color: #F3F0DD;
+  font-weight: 100;
+  font-size: 20px;
+}
+
+.formPage p {
+  color: #F3F0DD;
+  font-weight: 100;
+  font-size: 20px;
+
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #50060C;
+  outline: none;
+  border: none;
+  color: #F3F0DD;
+  font-weight: 100;
+  font-size: 20px;
+  border-radius: 7px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  height: 50px;
+  width: 200px;
+}

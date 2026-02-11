@@ -19,7 +19,54 @@ function App() {
       </div>
     </div>
     <div className="formPage">
-    <p>fddddddddddddddddddddddddddddd</p>
+    <div class="page"> 
+      <form class="rsvp-card"> 
+        <div class="form-group"> 
+          <label class="form-label" for="navn">Navn</label>
+          <input type="text" id="navn" name="navn" /> 
+        </div> 
+        <div class="form-group"> 
+          <p class="question-label">Deltar du?</p> 
+          <div class="radio-group"> 
+          <label class="radio-label"> 
+            <input type="radio" name="deltar" value="ja" /> Ja </label>
+          <label class="radio-label"> 
+            <input type="radio" name="deltar" value="nei" /> Nei </label>
+          </div> 
+        </div> 
+        <div class="form-group"> 
+          <p class="question-label">Behov for overnatting?</p> 
+          <div class="radio-group"> 
+            <label class="radio-label"> 
+              <input type="radio" name="overnatting" value="ja" /> Ja </label>
+            <label class="radio-label"> 
+              <input type="radio" name="overnatting" value="nei" /> Nei </label> 
+            </div> 
+          </div> 
+          <div class="form-group"> 
+            <p class="question-label">Behov for transport fra festen?</p> 
+            <div class="radio-group"> 
+              <label class="radio-label"> 
+                <input type="radio" name="transport" value="ja" /> Ja </label>
+              <label class="radio-label"> 
+                <input type="radio" name="transport" value="nei" /> Nei </label>
+            </div> 
+          </div> 
+          <div class="form-group"> 
+            <label class="form-label" for="epost">Epost</label>
+            <input type="email" id="epost" name="epost" /> 
+          </div> 
+          <div class="form-group"> 
+            <label class="form-label" for="mobil">Mobil</label> 
+            <input type="tel" id="mobil" name="mobil" /> 
+          </div> 
+          <div class="form-group"> 
+            <label class="form-label" for="kommentarer">Kommentarer</label> 
+            <textarea id="kommentarer" name="kommentarer" rows="3"></textarea> 
+          </div> 
+          <button type="submit" class="btn-primary">Bekreft</button> 
+        </form> 
+      </div>
     </div>
     </>
   );
