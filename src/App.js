@@ -3,6 +3,7 @@ import tors from './media/tors.jpg'
 import kirke from './media/kirke.jpg'
 import redigert from './media/redigert.jpg'
 import hamburger from './media/icons/more.png'
+import Maps from './Maps'
 import './App.css';
 
 function App() {
@@ -21,77 +22,103 @@ function App() {
       </div>
     </div>
     <div className="formPage">
-    <div class="page"> 
-      <form class="rsvp-card"> 
-        <div class="form-group"> 
-          <label class="form-label" for="navn">Navn</label>
+    <div className="page"> 
+      <form className="rsvp-card"> 
+        <div className="form-group"> 
+          <label className="form-label" for="navn">Navn</label>
           <input type="text" id="navn" name="navn" /> 
         </div> 
-        <div class="form-group"> 
-          <p class="question-label">Deltar du?</p> 
-          <div class="radio-group"> 
-          <label class="radio-label"> 
+        <div className="form-group"> 
+          <p className="question-label">Deltar du?</p> 
+          <div className="radio-group"> 
+          <label className="radio-label"> 
             <input type="radio" name="deltar" value="ja" /> Ja </label>
-          <label class="radio-label"> 
+          <label className="radio-label"> 
             <input type="radio" name="deltar" value="nei" /> Nei </label>
           </div> 
         </div> 
-        <div class="form-group"> 
-          <p class="question-label">Behov for overnatting?</p> 
-          <div class="radio-group"> 
-            <label class="radio-label"> 
+        <div className="form-group"> 
+          <p className="question-label">Behov for overnatting?</p> 
+          <div className="radio-group"> 
+            <label className="radio-label"> 
               <input type="radio" name="overnatting" value="ja" /> Ja </label>
-            <label class="radio-label"> 
+            <label className="radio-label"> 
               <input type="radio" name="overnatting" value="nei" /> Nei </label> 
             </div> 
           </div> 
-          <div class="form-group"> 
-            <p class="question-label">Behov for transport fra festen?</p> 
-            <div class="radio-group"> 
-              <label class="radio-label"> 
+          <div className="form-group"> 
+            <p className="question-label">Behov for transport fra festen?</p> 
+            <div className="radio-group"> 
+              <label className="radio-label"> 
                 <input type="radio" name="transport" value="ja" /> Ja </label>
-              <label class="radio-label"> 
+              <label className="radio-label"> 
                 <input type="radio" name="transport" value="nei" /> Nei </label>
             </div> 
           </div> 
-          <div class="form-group"> 
-            <label class="form-label" for="epost">Epost</label>
+          <div className="form-group"> 
+            <label className="form-label" for="epost">Epost</label>
             <input type="email" id="epost" name="epost" /> 
           </div> 
-          <div class="form-group"> 
-            <label class="form-label" for="mobil">Mobil</label> 
+          <div className="form-group"> 
+            <label className="form-label" for="mobil">Mobil</label> 
             <input type="tel" id="mobil" name="mobil" /> 
           </div> 
-          <div class="form-group"> 
-            <label class="form-label" for="kommentarer">Kommentarer</label> 
+          <div className="form-group"> 
+            <label className="form-label" for="kommentarer">Kommentarer</label> 
             <textarea id="kommentarer" name="kommentarer" rows="3"></textarea> 
           </div> 
-          <button type="submit" class="btn-primary">Bekreft</button> 
+          <button type="submit" className="btn-primary">Bekreft</button> 
         </form> 
       </div>
     </div>
-    <div class="info-page">
-      <div class="info-page-holder">
-        <div class="text-group">
+    <div className="info-page">
+      <div className="info-page-holder">
+        <div className="text-group">
           <h1>Informasjon</h1>
           <p> Vi gleder oss masse til å feire oss med alle dere 04.07.2026. 
             På denne nettsiden du enten ble henvist via papir eller internett ligger det generell informasjon om den store dagen vår.
             Skulle det være noe informasjon du savner, gjerne ta kontakt med oss for eventuel presisering.</p>
         </div>
-        <div class="text-group">
+        <div className="text-group">
           <h1>Vielsen</h1>
           <p>Bryllupet vil foregå I Skien, nærmere bestemt bygda Skotfoss.
             Det blir vielse I flotte Skotfoss kirke.</p>
         </div>
-        <img class="kirke" alt="kirke" src={kirke}></img>
-        <div class="text-group">
+        <img className="kirke" alt="kirke" src={kirke}></img>
+        <div className="text-group">
           <h1>Bryllupsfesten</h1>
           <p>Bryllupsfesten finner sted I retning gamle Skotfoss bruk, ved noen eldre lagringsfasiliteter kalt Tors Plass. 
             Vi har en visjon om at feiring skal minne mer om en ordentlig sommerfest enn et klassisk bryllup, 
             så kutymen blir uformell. Det blir servert alkohol på huset, men om du er nervøs for hvor langt lageret rekker er det bare å ta med noe I reserve for egen del.
             Siden det er alkoholservering blir det også 18 års grense på festen.</p>
         </div>
-        <img class="tors" alt="tors" src={tors}></img>
+        <img className="tors" alt="tors" src={tors}></img>
+      </div>
+    </div>
+    <div className="info-page">
+      <div className="info-page-holder">
+        <div className="text-group">
+          <h1>Ankomst/Parkering</h1>
+          <p>Parkering for vielsen gjøres der det er plass.
+            I første omgang blir dette kirkens egne parkeringsplasser, 
+            skolen eller på andre siden av vegen ved coop prix. 
+            Hvis det er tjåka fult her, er det mulig å parkere ved slusene nede I bakken vår. 
+            For festen er det lettest å parkere ved Skotfoss stadion eller ved barnehagen, 
+            hvis det fyller seg opp her er det mye plass ved Skotfoss bruk.</p>
+        </div>
+        <Maps></Maps>
+        <img alt="kirke parkering"></img>
+        <div className="text-group">
+          <p>Tors Plass ligger helt I enden av halvøya som bruket befinner seg på og det må beregenes rundt 500 meter på fot.
+             Anbefalt rute er markert på vedlagt kart. 
+             Det er I utgangspunktet ikke lov å kjøre inn på stien, 
+             men om du er dårlig til bens og nervøs for at ferden blir for lang gjerne meld I fra, 
+             så finner vi ut av det.</p>
+        </div>
+        <div className="dual-image">
+          <img alt="alternativ 1"></img>
+          <img alt="alternativ 1"></img>
+        </div>
       </div>
     </div>
     </>
