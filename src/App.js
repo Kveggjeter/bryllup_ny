@@ -1,4 +1,6 @@
 import oss_1 from './media/oss_1.jpg'
+import tors from './media/tors.jpg'
+import kirke from './media/kirke.jpg'
 import redigert from './media/redigert.jpg'
 import hamburger from './media/icons/more.png'
 import './App.css';
@@ -68,8 +70,29 @@ function App() {
         </form> 
       </div>
     </div>
-    <div>
-      
+    <div class="info-page">
+      <div class="info-page-holder">
+        <div class="text-group">
+          <h1>Informasjon</h1>
+          <p> Vi gleder oss masse til å feire oss med alle dere 04.07.2026. 
+            På denne nettsiden du enten ble henvist via papir eller internett ligger det generell informasjon om den store dagen vår.
+            Skulle det være noe informasjon du savner, gjerne ta kontakt med oss for eventuel presisering.</p>
+        </div>
+        <div class="text-group">
+          <h1>Vielsen</h1>
+          <p>Bryllupet vil foregå I Skien, nærmere bestemt bygda Skotfoss.
+            Det blir vielse I flotte Skotfoss kirke.</p>
+        </div>
+        <img class="kirke" alt="kirke" src={kirke}></img>
+        <div class="text-group">
+          <h1>Bryllupsfesten</h1>
+          <p>Bryllupsfesten finner sted I retning gamle Skotfoss bruk, ved noen eldre lagringsfasiliteter kalt Tors Plass. 
+            Vi har en visjon om at feiring skal minne mer om en ordentlig sommerfest enn et klassisk bryllup, 
+            så kutymen blir uformell. Det blir servert alkohol på huset, men om du er nervøs for hvor langt lageret rekker er det bare å ta med noe I reserve for egen del.
+            Siden det er alkoholservering blir det også 18 års grense på festen.</p>
+        </div>
+        <img class="tors" alt="tors" src={tors}></img>
+      </div>
     </div>
     </>
   );

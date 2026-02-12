@@ -141,3 +141,27 @@ input {
 }
 
 /****************PAGE3****************/
+
+.info-page {
+  max-height: 100vh;
+  height: 100vh;
+  background-color: #06504A;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 2px blue solid;
+  color: #F3F0DD;
+}
+
+.info-page-holder {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.kirke {
+  max-width: 100%;
+  height: auto;
+}
+
+.tors {
+  max-width: 100%;
+  height: auto;
+}
