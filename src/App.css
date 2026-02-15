@@ -76,6 +76,12 @@
   border: 1px red solid;
 }
 
+.page {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 .rsvp-card {
   display: flex;
   flex-direction: column;
@@ -84,7 +90,7 @@
 .form-group {
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -151,9 +157,23 @@ input {
   color: #F3F0DD;
 }
 
+.info-page-0 {
+  padding-top: 10%;
+  max-height: 100vh;
+  height: 100vh;
+  background-color: #06504A;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 2px red solid;
+  color: #F3F0DD;
+}
+
 .info-page-holder {
   margin-left: 5%;
   margin-right: 5%;
+}
+
+#page3 {
+  border: 2x red solid;
 }
 
 .kirke {
@@ -164,4 +184,24 @@ input {
 .tors {
   max-width: 100%;
   height: auto;
+}
+
+.map_img_1 {
+  max-width: 45%;
+  height: auto;
+  margin-right: auto;
+}
+
+.map_img_2 {
+  max-width: 45%;
+  height: auto;
+  margin-left: auto;
+}
+
+.dual-image {
+  gap: 5%;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
 }

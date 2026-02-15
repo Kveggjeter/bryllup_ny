@@ -1,4 +1,6 @@
 import oss_1 from './media/oss_1.jpg'
+import map1 from './media/map1.png'
+import map2 from './media/maps2.png'
 import tors from './media/tors.jpg'
 import kirke from './media/kirke.jpg'
 import redigert from './media/redigert.jpg'
@@ -95,7 +97,7 @@ function App() {
         <img className="tors" alt="tors" src={tors}></img>
       </div>
     </div>
-    <div className="info-page">
+    <div className="info-page-0">
       <div className="info-page-holder">
         <div className="text-group">
           <h1>Ankomst/Parkering</h1>
@@ -107,7 +109,6 @@ function App() {
             hvis det fyller seg opp her er det mye plass ved Skotfoss bruk.</p>
         </div>
         <Maps></Maps>
-        <img alt="kirke parkering"></img>
         <div className="text-group">
           <p>Tors Plass ligger helt I enden av halvøya som bruket befinner seg på og det må beregenes rundt 500 meter på fot.
              Anbefalt rute er markert på vedlagt kart. 
@@ -116,8 +117,8 @@ function App() {
              så finner vi ut av det.</p>
         </div>
         <div className="dual-image">
-          <img alt="alternativ 1"></img>
-          <img alt="alternativ 1"></img>
+          <img className="map_img_1" alt="alternativ 1" src={map1}></img>
+          <img className="map_img_2" alt="alternativ 1" src={map2}></img>
         </div>
       </div>
     </div>
