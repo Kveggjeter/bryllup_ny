@@ -6,19 +6,25 @@ import kirke from './media/kirke.jpg'
 import redigert from './media/redigert.jpg'
 import hamburger from './media/icons/more.png'
 import Maps from './Maps'
+import Menu from './Menu'
+import {useState} from 'react'
 import './App.css';
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
+    {menuOpen && <Menu onClose={() => setMenuOpen(false)}/>}
     <div className="frontPage">
       <div className="out_frontpage">
-        <div className="menu_box">
+        <div className="menu_box" onClick={() => setMenuOpen(true)}>
           <img className="hamburger" alt="hamburger" src={hamburger}></img>
           <h2 className="menu_text">Meny</h2>
         </div>
           <img className="picture_frontpage" alt="oss" src={redigert} ></img>
           <div className="bottom_text_box">
+            <h2 className="picture_text">4. Juli 2026 - Skien</h2>
             <h2 className="bottom_text">Vi gleder oss masse til å feire med deg!</h2>
           </div>
       </div>
@@ -95,10 +101,6 @@ function App() {
             Siden det er alkoholservering blir det også 18 års grense på festen.</p>
         </div>
         <img className="tors" alt="tors" src={tors}></img>
-      </div>
-    </div>
-    <div className="info-page-0">
-      <div className="info-page-holder">
         <div className="text-group">
           <h1>Ankomst/Parkering</h1>
           <p>Parkering for vielsen gjøres der det er plass.

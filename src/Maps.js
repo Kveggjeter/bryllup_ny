@@ -11,19 +11,25 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 40.7128, // New York example
-  lng: -74.0060
+  lat: 59.20638906716275,
+  lng: 9.540730474522007
+};
+
+const parkering_barnehage = {
+  lat: 59.2091682972795,
+  lng: 9.528286709957444
 };
 
 function Maps() {
   return (
-    <LoadScript googleMapsApiKey="">
+    <LoadScript googleMapsApiKey="AIzaSyAh-XjOCgKaqt5hc2whn0NYT2VfgeyDeVI">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={13}
       >
       <Marker position={center}></Marker>
+      <Marker position={parkering_barnehage}></Marker>
       </GoogleMap>
     </LoadScript>
   );

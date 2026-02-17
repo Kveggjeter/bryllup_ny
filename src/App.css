@@ -1,3 +1,59 @@
+/****************MENU****************/
+.menu-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 9999;
+}
+
+.menu-out-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  font-size: 70px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  border: none; 
+  background-color:#3A9635; 
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+}
+
+.registrer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding-bottom: 5px;
+  border-bottom: black dotted 3px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  cursor: pointer;
+  font-size: 70px;
+  padding-bottom: 5px;
+  border-bottom: black dotted 1px;
+}
+
+
+
 /****************PAGE1****************/
 .frontPage {
   max-height: 100vh;
@@ -39,6 +95,7 @@
   margin-right: auto;
 }
 
+
 .menu_text {
   font-weight: 100;
   display: flex;
@@ -52,12 +109,20 @@
   max-height: 100vh;
   max-width: 92vw;
   object-fit: contain;
-  border: 1px solid red;
 }
 
 .bottom_text_box {
   margin-bottom: auto;
 }
+
+.picture_text {
+  font-size: 30px;
+  font-weight: 100;
+  color: #F3F0DD;
+  text-align: center;
+  margin-top: -10%;
+}
+
 
 .bottom_text {
   font-size: 30px;
@@ -149,32 +214,18 @@ input {
 /****************PAGE3****************/
 
 .info-page {
-  max-height: 100vh;
-  height: 100vh;
   background-color: #06504A;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 2px blue solid;
   color: #F3F0DD;
 }
 
-.info-page-0 {
-  padding-top: 10%;
-  max-height: 100vh;
-  height: 100vh;
-  background-color: #06504A;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border: 2px red solid;
-  color: #F3F0DD;
-}
 
 .info-page-holder {
   margin-left: 5%;
   margin-right: 5%;
 }
 
-#page3 {
-  border: 2x red solid;
-}
 
 .kirke {
   max-width: 100%;
