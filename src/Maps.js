@@ -22,12 +22,13 @@ const parkering_barnehage = {
 
 function Maps() {
   return (
-    <LoadScript googleMapsApiKey="AIzaSyAh-XjOCgKaqt5hc2whn0NYT2VfgeyDeVI">
+    <LoadScript googleMapsApiKey="to">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
         zoom={13}
-      >
+      
+          
       <Marker position={center}></Marker>
       <Marker position={parkering_barnehage}></Marker>
       </GoogleMap>
