@@ -1,5 +1,8 @@
 import location from './media/location.png'
-import { LoadScript, GoogleMap, Marker} from '@react-google-maps/api';
+import {MapContainer, Marker, Popup, TileLayer} from "react-leaflet";
+import L, {divIcon, point} from "leaflet";
+
+import "leaflet/dist/leaflet.css";
 
 const containerStyle = {
   overflow: 'hidden',
@@ -19,15 +22,15 @@ const parkering_barnehage = {
 
 function Maps() {
   return (
-    <LoadScript googleMapsApiKey="to">
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={13}>
-      <Marker position={center}></Marker>
-      <Marker position={parkering_barnehage}></Marker>
-      </GoogleMap>
-    </LoadScript>
+    <MapContainer
+      center={center}
+      zoom={13}
+    >
+    <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />  
+    </MapContainer>
   );
 }
 
