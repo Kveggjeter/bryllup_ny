@@ -1,8 +1,4 @@
-/*
-
-
-*/
-
+import location from './media/location.png'
 import { LoadScript, GoogleMap, Marker} from '@react-google-maps/api';
 
 const containerStyle = {
@@ -20,15 +16,14 @@ const parkering_barnehage = {
   lng: 9.528286709957444
 };
 
+
 function Maps() {
   return (
     <LoadScript googleMapsApiKey="to">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={13}
-      
-          
+        zoom={13}>
       <Marker position={center}></Marker>
       <Marker position={parkering_barnehage}></Marker>
       </GoogleMap>

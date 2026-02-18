@@ -41,11 +41,11 @@
   border-bottom: black dotted 3px;
 }
 
-ul {
+.menu-out-box ul {
   list-style-type: none;
 }
 
-li {
+.menu-out-box li {
   cursor: pointer;
   font-size: 70px;
   padding-bottom: 5px;
@@ -255,4 +255,8 @@ input {
   height: auto;
   display: flex;
   flex-direction: row;
+}
+
+table, th, td {
+  border: 1px solid #F3F0DD;
 }
