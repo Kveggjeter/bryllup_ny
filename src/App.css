@@ -1,4 +1,8 @@
 /****************MENU****************/
+body {
+  background-color: #06504A;
+}
+
 .menu-box {
   position: fixed;
   top: 0;
@@ -57,7 +61,6 @@
 /****************PAGE1****************/
 .frontPage {
   max-height: 100vh;
-  background-color: #06504A;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -138,7 +141,6 @@
   height: 100vh;
   background-color: #06504A;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border: 1px red solid;
 }
 
 .page {
@@ -216,7 +218,6 @@ input {
 .info-page {
   background-color: #06504A;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border: 2px blue solid;
   color: #F3F0DD;
 }
 
@@ -266,4 +267,15 @@ table, th, td {
   width: 80vw;
   border-radius: 2rem;
   justify-self: center;
+}
+
+.bussholder {
+  max-width: 100%;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.bussrute {
+  display: block;
 }

@@ -1,4 +1,5 @@
 import oss_1 from './media/oss_1.jpg'
+import bussrute from './media/bussrute.png'
 import map1 from './media/map1.png'
 import map2 from './media/maps2.png'
 import tors from './media/tors.jpg'
@@ -148,7 +149,7 @@ function App() {
               type="radio"
               name="folge" 
               value="true"
-              checked={post.folge == true}
+              checked={post.folge === true}
               onChange={e => setPost({ ...post, folge: true})} 
               /> Ja </label>
           <label className="radio-label"> 
@@ -156,7 +157,7 @@ function App() {
               type="radio"
               name="folge" 
               value="false"
-              checked={post.folge == false}
+              checked={post.folge === false}
               onChange={e => setPost({ ...post, folge: false})} 
             /> Nei </label>
           </div> 
@@ -169,7 +170,7 @@ function App() {
                type="radio" 
                name="overnatting" 
                value="true"
-               checked={post.overnatting == true}
+               checked={post.overnatting === true}
                onChange={e => setPost({ ...post, overnatting: true})}  
                /> Ja </label>
             <label className="radio-label"> 
@@ -177,7 +178,7 @@ function App() {
                type="radio" 
                name="overnatting" 
                value="false"
-               checked={post.overnatting == false}
+               checked={post.overnatting === false}
                onChange={e => setPost({ ...post, overnatting: false})}  
                /> Nei </label>
             </div> 
@@ -190,7 +191,7 @@ function App() {
                 type="radio" 
                 name="transport" 
                 value="true"
-                checked={post.taxi == true}
+                checked={post.taxi === true}
                 onChange={e => setPost({ ...post, taxi: true})}  
                 /> Ja </label>
               <label className="radio-label"> 
@@ -198,7 +199,7 @@ function App() {
                 type="radio" 
                 name="transport" 
                 value="false"
-                checked={post.taxi == false}
+                checked={post.taxi === false}
                 onChange={e => setPost({ ...post, taxi: false})}  
                 /> Nei </label>
             </div> 
@@ -410,7 +411,7 @@ function App() {
               </tr>
             )}
           </tbody>
-        </table>
+          </table>
           <div className="drive-form">
             <div className="form-group">
               <label className="form-label" for="drive_nanv">Navn</label>
@@ -480,12 +481,26 @@ function App() {
             <br></br>
             MERK: Siste buss fra Skotfoss til Skien på lørdager går fra busstopp “Kanalen” kl.21:00
           </p>
-          <img alt="Busstabell p6"></img>
+          <div className="bussholder">
+            <img className="bussrute" alt="Busstabell p6" src={bussrute}></img>
+          </div>
           <h3>Kollektivtransport - tog</h3>
           <p>Det går tog til og fra Skien stasjon, se vy.no for avganger.
             Du kan ta buss fra Skien stasjon til Skotfoss fra busstopp “Rektor Ørns gate”.
             Merk at stasjonen ligger litt i “utkanten” av bysentrum dersom du kommer med tog
             og skal overnatte på hotell.
+          </p>
+        </div>
+        <div className="text-group">
+          <h1>Gaveliste</h1>
+          <p>Vi er heldige nok til å ha det vi trenger av ting og tang, så vi ønsker ikke at noen tar med bryllupsgaver.
+            Hvis det allikevel er ønske om å gi oss en bryllupsgave, takker vi med stort hjerte for bidrag til bryllupsreisen vår til Japan. 
+            Du kan velge om du ønsker å bruke Vipps eller bankoverføring.
+            <br></br><br></br>
+            Vipps: Amanda, 45 88 41 82<br></br>
+            Bankkontonummer: 2601 41 08504
+            <br></br><br></br>
+            Tusen hjertelig takk!
           </p>
         </div>
       </div>
