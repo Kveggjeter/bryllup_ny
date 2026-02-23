@@ -7,11 +7,109 @@ import redigert from './media/redigert.jpg'
 import hamburger from './media/icons/more.png'
 import Maps from './Maps'
 import Menu from './Menu'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import {supabase} from './client'
 import './App.css';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [drives, setDrives] = useState([]);
+  const [drive, setDrive] = useState({
+    drive_navn: "",
+    drive_mobil: "",
+    drive_sted: ""
+  });
+  const [posts, setPosts] = useState([]);
+  const [post, setPost] = useState({
+    navn: "",
+    folge: null,
+    overnatting: null,
+    taxi: null,
+    epost: "",
+    mobil: "",
+    allergi: "", 
+    kommentar: ""
+  });
+
+  const {
+    navn,
+    folge, 
+    overnatting, 
+    taxi, 
+    epost,
+    mobil,
+    allergi,
+    kommentar
+  } = post;
+  const {
+    drive_navn,
+    drive_mobil,
+    drive_sted
+  } = drive;
+
+  useEffect(() => {
+    fetchPosts()
+    fetchDrive()
+  }, [])
+
+  async function fetchPosts() {
+    const { data } = await supabase
+      .from('users')
+      .select()
+    setPosts(data)
+    console.log("data: ", data);
+  }
+
+  async function fetchDrive() {
+    const { data } = await supabase
+      .from('drive')
+      .select()
+    setDrives(data)
+    console.log("drive ", data);
+  }
+
+  async function createPost() {
+    await supabase
+      .from('users')
+      .insert([{
+        navn, 
+        folge, 
+        overnatting, 
+        taxi, 
+        epost, 
+        mobil,
+        allergi,
+        kommentar 
+      }])
+      .single()
+    setPost({
+      navn: "",
+      folge: null,
+      overnatting: null,
+      taxi: null,
+      epost: "",
+      mobil: "",
+      allergi: "",
+      kommentar: ""
+    })
+  }
+
+  async function createDrive() {
+  await supabase
+    .from('drive')
+    .insert([{
+      navn: drive_navn,
+      mobil: drive_mobil,
+      sted: drive_sted
+    }])
+      .single()
+    setDrive({
+      drive_navn: "",
+      drive_mobil: "",
+      drive_sted: ""
+    })
+  }
+
 
   return (
     <>
@@ -34,48 +132,122 @@ function App() {
       <form className="rsvp-card"> 
         <div className="form-group"> 
           <label className="form-label" for="navn">Navn</label>
-          <input type="text" id="navn" name="navn" /> 
+          <input
+           type="text" 
+           id="navn" 
+           name="navn" 
+           value={navn}
+           onChange={e => setPost({ ...post, navn: e.target.value})}
+           /> 
         </div> 
         <div className="form-group"> 
-          <p className="question-label">Deltar du?</p> 
+          <p className="question-label">Har du følge?</p> 
           <div className="radio-group"> 
           <label className="radio-label"> 
-            <input type="radio" name="deltar" value="ja" /> Ja </label>
+            <input
+              type="radio"
+              name="folge" 
+              value="true"
+              checked={post.folge == true}
+              onChange={e => setPost({ ...post, folge: true})} 
+              /> Ja </label>
           <label className="radio-label"> 
-            <input type="radio" name="deltar" value="nei" /> Nei </label>
+            <input
+              type="radio"
+              name="folge" 
+              value="false"
+              checked={post.folge == false}
+              onChange={e => setPost({ ...post, folge: false})} 
+            /> Nei </label>
           </div> 
         </div> 
         <div className="form-group"> 
           <p className="question-label">Behov for overnatting?</p> 
           <div className="radio-group"> 
             <label className="radio-label"> 
-              <input type="radio" name="overnatting" value="ja" /> Ja </label>
+              <input
+               type="radio" 
+               name="overnatting" 
+               value="true"
+               checked={post.overnatting == true}
+               onChange={e => setPost({ ...post, overnatting: true})}  
+               /> Ja </label>
             <label className="radio-label"> 
-              <input type="radio" name="overnatting" value="nei" /> Nei </label> 
+              <input
+               type="radio" 
+               name="overnatting" 
+               value="false"
+               checked={post.overnatting == false}
+               onChange={e => setPost({ ...post, overnatting: false})}  
+               /> Nei </label>
             </div> 
           </div> 
           <div className="form-group"> 
             <p className="question-label">Behov for transport fra festen?</p> 
             <div className="radio-group"> 
               <label className="radio-label"> 
-                <input type="radio" name="transport" value="ja" /> Ja </label>
+                <input 
+                type="radio" 
+                name="transport" 
+                value="true"
+                checked={post.taxi == true}
+                onChange={e => setPost({ ...post, taxi: true})}  
+                /> Ja </label>
               <label className="radio-label"> 
-                <input type="radio" name="transport" value="nei" /> Nei </label>
+                <input
+                type="radio" 
+                name="transport" 
+                value="false"
+                checked={post.taxi == false}
+                onChange={e => setPost({ ...post, taxi: false})}  
+                /> Nei </label>
             </div> 
           </div> 
           <div className="form-group"> 
             <label className="form-label" for="epost">Epost</label>
-            <input type="email" id="epost" name="epost" /> 
+            <input
+              type="email" 
+              id="epost" 
+              name="epost"  
+              value={epost}
+              onChange={e => setPost({ ...post, epost: e.target.value})}
+             /> 
           </div> 
           <div className="form-group"> 
             <label className="form-label" for="mobil">Mobil</label> 
-            <input type="tel" id="mobil" name="mobil" /> 
-          </div> 
+            <input 
+            type="mobil" 
+            id="mobil" 
+            name="mobil" 
+            value={mobil}
+            onChange={e => setPost({ ...post, mobil: e.target.value})}
+            /> 
+          </div>
+          <div className="form-group"> 
+            <label className="form-label" for="allergi">Allergi/preferanser</label> 
+            <input 
+            type="allergi" 
+            id="allergi" 
+            name="allergi" 
+            value={allergi}
+            onChange={e => setPost({ ...post, allergi: e.target.value})}
+            /> 
+          </div>  
           <div className="form-group"> 
             <label className="form-label" for="kommentarer">Kommentarer</label> 
-            <textarea id="kommentarer" name="kommentarer" rows="3"></textarea> 
+            <textarea
+              id="kommentarer"
+              name="kommentarer"
+              rows="3"
+              value={post.kommentar}
+              onChange={e => setPost({ ...post, kommentar: e.target.value })}
+              />
           </div> 
-          <button type="submit" className="btn-primary">Bekreft</button> 
+          <button 
+            type="submit" 
+            className="btn-primary"
+            onClick={createPost}
+            >Bekreft</button> 
         </form> 
       </div>
     </div>
@@ -216,17 +388,69 @@ function App() {
             kan du ta kontakt med en av de på listen nedenform
           </p>
           <table>
+          <thead>
             <tr>
               <th>Navn:</th>
               <th>Telefon:</th>
               <th>Reiser til Skotfoss fra:</th>
             </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
+          </thead>
+          <tbody>
+            {drives && drives.length > 0 ? (
+              drives.map((d, index) => (
+                <tr key={index}>
+                  <td>{d.navn}</td>
+                  <td>{d.mobil}</td>
+                  <td>{d.sted}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="3">Ingen har registrert skyss enda</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+          <div className="drive-form">
+            <div className="form-group">
+              <label className="form-label" for="drive_nanv">Navn</label>
+              <input
+              type="text"
+              id="drive_navn"
+              name="drive_navn"
+              value={drive_navn}
+              onChange={e => setDrive({ ...drive, drive_navn: e.target.value})}
+              >
+              </input>
+            </div>
+            <div className="form-group">
+              <label className="form-label" for="drive_mobil">Mobil</label>
+              <input
+              type="text"
+              id="drive_mobil"
+              name="drive_mobil"
+              value={drive_mobil}
+              onChange={e => setDrive({ ...drive, drive_mobil: e.target.value})}
+              >
+              </input>
+            </div>
+            <div className="form-group">
+              <label className="form-label" for="drive_sted">Reiser fra</label>
+              <input
+              type="text"
+              id="drive_sted"
+              name="drive_sted"
+              value={drive_sted}
+              onChange={e => setDrive({ ...drive, drive_sted: e.target.value})}
+              >
+              </input>
+            </div>
+            <button
+            type="submit"
+            className="btn-primary"
+            onClick={createDrive}
+            >Bekreft</button>
+          </div>
           <h3>Fra Skotfoss med taxi</h3>
           <p>
             Vi setter opp maxi-taxier fra Skotfoss til Skien kl.23:00 og kl.02:00 

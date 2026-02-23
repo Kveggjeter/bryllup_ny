@@ -261,9 +261,9 @@ table, th, td {
   border: 1px solid #F3F0DD;
 }
 
-
 .leaflet-container {
-  height: 300px;
-  width: 300px;
+  height: 50vh;
+  width: 80vw;
   border-radius: 2rem;
+  justify-self: center;
 }
