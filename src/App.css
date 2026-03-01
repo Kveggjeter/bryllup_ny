@@ -23,12 +23,15 @@ img {
 }
 
 .menu-box {
+  background-color: white;
   position: fixed;
   inset: 0;     
   width: auto;
   height: auto;
-}
+  z-index: 9999;          
+  pointer-events: all;
 
+}
 
 .menu-out-box {
   display: flex;
@@ -76,49 +79,79 @@ img {
 
 
 /****************PAGE1****************/
+
 .frontPage {
-  max-height: 100vh;
+  height: 100svh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-image: url("/src/media/tillegg/bryllup/bryll.png");
-  background-size: 99%;
+  background-size: 99.5%;
   background-color: #06504A;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-
 *, *::before, *::after { box-sizing: border-box; }
+
 
 .picture-box {
   width: 100%;
   max-width: 100%;
-  padding: 0 4vw;   
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(6, 80, 74, 0.98) 5%,
-    rgba(6, 80, 74, 0.98) 95%,
-    transparent
-  );
+  padding: 4vh 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .picture-box {
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(6, 80, 74, 0.98) 2%,
+      rgba(6, 80, 74, 0.98) 98%,
+      transparent
+    );
+  }
 }
 
 
 .picture_frontpage {
   display: block;
-  max-width: 100%;
+  max-width: min(100%, 1000px);
+  max-height: 70svh;
   height: auto;
 }
 
-
 .out_frontpage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding-right: 10px;
-  padding-left: 10px;
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  background-color: #06504A;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  padding: 0 10px;
 }
+
+@media (min-width: 900px) {
+  .out_frontpage {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(6, 80, 74, 0.98) 5%,
+      rgba(6, 80, 74, 0.98) 95%,
+      transparent
+    );
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    padding: 0 10px;
+  }
+
+}
+
+
 
 .menu_box {
   z-index: 101;
@@ -144,7 +177,6 @@ img {
   margin-right: auto;
 }
 
-
 .menu_text {
   font-weight: 100;
   display: flex;
@@ -161,9 +193,8 @@ img {
   font-weight: 100;
   color: #F3F0DD;
   text-align: center;
-  margin-top: -20%;
+  margin-top: 1.5vh;
 }
-
 
 .bottom_text {
   font-size: 30px;
@@ -171,6 +202,7 @@ img {
   color: #F3F0DD;
   text-align: center;
 }
+
 
 /****************PAGE2****************/
 
