@@ -224,7 +224,7 @@ function App() {
     <div className="page"> 
       <form className="rsvp-card" onSubmit={createPost}> 
         <div className="form-group"> 
-          <label className="form-label" for="navn">Navn</label>
+          <label className="form-label" htmlFor="navn">Navn</label>
           <input
            className={`input-field ${errors.navn ? "error" : ""}`}
            type="text" 
@@ -255,7 +255,7 @@ function App() {
               onChange={e => setPost({ ...post, folge: false})} 
             /> Nei </label>
           </div> 
-          {errors.navn && <p className="error-text">{errors.folge}</p>}
+          {errors.folge && <p className="error-text">{errors.folge}</p>}
         </div> 
         <div className="form-group"> 
           <p className="question-label">Behov for overnatting?</p> 
@@ -277,7 +277,7 @@ function App() {
                onChange={e => setPost({ ...post, overnatting: false})}  
                /> Nei </label>
             </div> 
-            {errors.navn && <p className="error-text">{errors.overnatting}</p>}
+            {errors.overnatting && <p className="error-text">{errors.overnatting}</p>}
           </div> 
           <div className="form-group"> 
             <p className="question-label">Behov for transport fra festen?</p> 
@@ -299,10 +299,10 @@ function App() {
                 onChange={e => setPost({ ...post, taxi: false})}  
                 /> Nei </label>
             </div> 
-            {errors.navn && <p className="error-text">{errors.taxi}</p>}
+            {errors.taxi && <p className="error-text">{errors.taxi}</p>}
           </div> 
           <div className="form-group"> 
-            <label className="form-label" for="epost">Epost</label>
+            <label className="form-label" htmlFor="epost">Epost</label>
             <input
               className={`input-field ${errors.epost ? "error" : ""}`}
               type="email" 
@@ -311,10 +311,10 @@ function App() {
               value={epost}
               onChange={e => setPost({ ...post, epost: e.target.value})}
              /> 
-             {errors.navn && <p className="error-text">{errors.epost}</p>}
+             {errors.epost && <p className="error-text">{errors.epost}</p>}
           </div> 
           <div className="form-group"> 
-            <label className="form-label" for="mobil">Mobil</label> 
+            <label className="form-label" htmlFor="mobil">Mobil</label> 
             <input
             className={`input-field ${errors.mobil ? "error" : ""}`} 
             type="mobil" 
@@ -323,10 +323,10 @@ function App() {
             value={mobil}
             onChange={e => setPost({ ...post, mobil: e.target.value})}
             /> 
-            {errors.navn && <p className="error-text">{errors.mobil}</p>}
+            {errors.mobil && <p className="error-text">{errors.mobil}</p>}
           </div>
           <div className="form-group"> 
-            <label className="form-label" for="allergi">Allergi/preferanser</label> 
+            <label className="form-label" htmlFor="allergi">Allergi/preferanser</label> 
             <input
             className="input-field" 
             type="allergi" 
@@ -337,7 +337,7 @@ function App() {
             /> 
           </div>  
           <div className="form-group"> 
-            <label className="form-label" for="kommentarer">Kommentarer</label> 
+            <label className="form-label" htmlFor="kommentarer">Kommentarer</label> 
             <textarea
               className="input-field"
               id="kommentarer"
@@ -453,7 +453,7 @@ function App() {
           </table>
           <form onSubmit={createDrive} className="drive-form">
             <div className="form-group">
-              <label className="form-label" for="drive_navn">Navn</label>
+              <label className="form-label" htmlFor="drive_navn">Navn</label>
               <input
                 className={`input-field ${driveErrors.drive_navn ? "error" : ""}`}
                 value={drive_navn}
@@ -462,7 +462,7 @@ function App() {
               {driveErrors.drive_navn && <p className="error-text">{driveErrors.drive_navn}</p>}
             </div>
             <div className="form-group">
-              <label className="form-label" for="drive_mobil">Mobil</label>
+              <label className="form-label" htmlFor="drive_mobil">Mobil</label>
             <input
               className={`input-field ${driveErrors.drive_mobil ? "error" : ""}`}
               value={drive_mobil}
@@ -471,7 +471,7 @@ function App() {
             {driveErrors.drive_mobil && <p className="error-text">{driveErrors.drive_mobil}</p>}
             </div>
             <div className="form-group">
-              <label className="form-label" for="drive_sted">Reiser fra</label>
+              <label className="form-label" htmlFor="drive_sted">Reiser fra</label>
             <input
               className={`input-field ${driveErrors.drive_sted ? "error" : ""}`}
               value={drive_sted}
