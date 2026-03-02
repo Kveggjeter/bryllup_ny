@@ -430,9 +430,9 @@ function App() {
             <table>
           <thead>
             <tr>
-              <th>Navn:</th>
-              <th>Telefon:</th>
-              <th>Reiser til Skotfoss fra:</th>
+              <th>Navn</th>
+              <th>Telefon</th>
+              <th>Reiser til Skotfoss fra</th>
             </tr>
           </thead>
           <tbody>
