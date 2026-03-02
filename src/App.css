@@ -30,6 +30,8 @@ img {
   height: auto;
   z-index: 9999;          
   pointer-events: all;
+  padding-left: 10px;
+  padding-right: 10px;
 
 }
 
@@ -55,6 +57,13 @@ img {
   cursor: pointer;
   top: 20px;
   right: 20px;
+}
+
+.close-button:active {
+  background-color: initial;
+  box-shadow: none;
+  transform: none;
+  outline: none;
 }
 
 .registrer {
