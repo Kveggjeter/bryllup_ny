@@ -59,11 +59,21 @@ img {
   right: 20px;
 }
 
+
 .close-button:active {
   background-color: initial;
   box-shadow: none;
   transform: none;
   outline: none;
+  text-decoration: none;
+}
+
+.close-button::after {
+  background-color: initial;
+  box-shadow: none;
+  transform: none;
+  outline: none;
+  text-decoration: none;
 }
 
 .registrer {

@@ -19,6 +19,14 @@ function formValidator(post) {
   if (!post.navn || post.navn.trim().length < 2) { 
     errors.navn = "Vennligst skriv inn et gyldig navn."; 
   }
+
+  if (post.vielse !== true && post.vielse !== false) {
+     errors.vielse = "Vennligst velg du deltar på vielsen."; 
+    }
+
+  if (post.fest !== true && post.fest !== false) {
+     errors.fest = "Vennligst velg om du deltar på festen."; 
+    }
   
   if (post.folge !== true && post.folge !== false) {
      errors.folge = "Vennligst velg om du har følge."; 
@@ -93,6 +101,8 @@ function App() {
 
   const {
     navn,
+    vielse,
+    fest,
     folge, 
     overnatting, 
     taxi, 
@@ -148,7 +158,9 @@ function App() {
     await supabase
       .from('users')
       .insert([{
-        navn, 
+        navn,
+        vielse,
+        fest, 
         folge, 
         overnatting, 
         taxi, 
@@ -160,6 +172,8 @@ function App() {
       .single()
     setPost({
       navn: "",
+      vielse: null,
+      fest: null,
       folge: null,
       overnatting: null,
       taxi: null,
@@ -236,6 +250,50 @@ function App() {
            {errors.navn && <p className="error-text">{errors.navn}</p>}
         </div> 
         <div className="form-group"> 
+          <p className="question-label">Deltar du på vielsen?</p> 
+          <div className={`radio-group ${errors.vielse ? "error" : ""}`}> 
+          <label className="radio-label"> 
+            <input
+              type="radio"
+              name="vielse" 
+              value="true"
+              checked={post.vielse === true}
+              onChange={e => setPost({ ...post, vielse: true})} 
+              /> Ja </label>
+          <label className="radio-label"> 
+            <input
+              type="radio"
+              name="vielse" 
+              value="false"
+              checked={post.vielse === false}
+              onChange={e => setPost({ ...post, vielse: false})} 
+            /> Nei </label>
+          </div> 
+          {errors.vielse && <p className="error-text">{errors.vielse}</p>}
+        </div>
+        <div className="form-group"> 
+          <p className="question-label">Deltar du på bryllupsfesten?</p> 
+          <div className={`radio-group ${errors.fest ? "error" : ""}`}> 
+          <label className="radio-label"> 
+            <input
+              type="radio"
+              name="fest" 
+              value="true"
+              checked={post.fest === true}
+              onChange={e => setPost({ ...post, fest: true})} 
+              /> Ja </label>
+          <label className="radio-label"> 
+            <input
+              type="radio"
+              name="fest" 
+              value="false"
+              checked={post.fest === false}
+              onChange={e => setPost({ ...post, fest: false})} 
+            /> Nei </label>
+          </div> 
+          {errors.fest && <p className="error-text">{errors.fest}</p>}
+        </div>
+        <div className="form-group"> 
           <p className="question-label">Har du følge?</p> 
           <div className={`radio-group ${errors.folge ? "error" : ""}`}> 
           <label className="radio-label"> 
@@ -256,7 +314,7 @@ function App() {
             /> Nei </label>
           </div> 
           {errors.folge && <p className="error-text">{errors.folge}</p>}
-        </div> 
+        </div>   
         <div className="form-group"> 
           <p className="question-label">Behov for overnatting?</p> 
           <div className={`radio-group ${errors.overnatting ? "error" : ""}`}> 
