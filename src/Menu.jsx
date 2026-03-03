@@ -9,8 +9,8 @@ function Menu({ onClose }) {
                 <ul>
                     <li><a href="#program" onClick={onClose}>Program</a></li>
                     <li><a href="#kart" onClick={onClose}>Kart</a></li>
-                    <li><a href="#gaveliste" onClick={onClose}>Gaveliste</a></li>
-                    <li><a href="#informasjon" onClick={onClose}>Informasjon</a></li>
+                    <li><a href="#gave" onClick={onClose}>Gaveliste</a></li>
+                    <li><a href="#infor" onClick={onClose}>Informasjon</a></li>
                 </ul>
             </div> 
         </div> 
