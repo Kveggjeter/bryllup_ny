@@ -1,6 +1,7 @@
 /****************MENU****************/
 body {
   background-color: #06504A;
+  font-family: 'Gurmukhi MN',sans-serif;
 }
 
 a {
@@ -108,7 +109,7 @@ img {
 
 .frontPage {
   min-height: 100svh;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Gurmukhi MN',sans-serif;
   background-image: url("/src/media/tillegg/bryllup/bryllup_1.png");
   background-size: 99.5%;
   background-color: #06504A;
@@ -148,6 +149,7 @@ img {
   max-width: min(100%, 1000px);
   max-height: 70svh;
   height: auto;
+  
 }
 
 .out_frontpage {
@@ -208,6 +210,7 @@ img {
   display: flex;
   font-size: 30px;
   margin-right: auto;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .bottom_text_box {
@@ -324,7 +327,6 @@ textarea.error {
 .formPage p {
   font-weight: 100;
   font-size: 20px;
-
 }
 
 input {
@@ -384,6 +386,17 @@ input {
   padding-bottom: 25px;
   background-color: #F3F0DD;
 }
+
+@media (max-width: 900px) {
+  .leaflet-container {
+    height: 40vh;
+  }
+
+  .map-page {
+    padding-bottom: 70px;
+  }
+}
+
 
 .map-page-holder {
   margin-left: 5%;
@@ -577,4 +590,13 @@ table {
     margin-right: auto;
   }
 
+}
+
+.taxi-link {
+  text-decoration: underline;
+  color: blue;
+}
+
+.les-mer {
+  font-size: 16px;
 }

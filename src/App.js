@@ -229,13 +229,14 @@ function App() {
             <img className="picture_frontpage" alt="oss" src={redigert} ></img>
           </div>
           <div className="bottom_text_box">
-            <h2 className="picture_text">4. Juli 2026 - Skien</h2>
+            <h2 className="picture_text">4. Juli 2026 - Skotfoss</h2>
             <h2 className="bottom_text">Vi gleder oss masse til å feire med deg!</h2>
           </div>
       </div>
     </div>
     <div id="registrer" className="formPage">
     <div className="page"> 
+      <h1>Påmeldingsskjema - frist 15. mai</h1>
       <form className="rsvp-card" onSubmit={createPost}> 
         <div className="form-group"> 
           <label className="form-label" htmlFor="navn">Navn</label>
@@ -316,7 +317,9 @@ function App() {
           {errors.folge && <p className="error-text">{errors.folge}</p>}
         </div>   
         <div className="form-group"> 
-          <p className="question-label">Behov for overnatting?</p> 
+          <p className="question-label">Behov for overnatting?
+            <br></br>
+            <a className="les-mer">(les mer <a className="taxi-link" href="#telt">her</a>)</a></p> 
           <div className={`radio-group ${errors.overnatting ? "error" : ""}`}> 
             <label className="radio-label"> 
               <input
@@ -338,7 +341,9 @@ function App() {
             {errors.overnatting && <p className="error-text">{errors.overnatting}</p>}
           </div> 
           <div className="form-group"> 
-            <p className="question-label">Behov for transport fra festen?</p> 
+            <p className="question-label">Behov for transport fra festen?
+              <br></br> 
+              <a className="les-mer">(les mer <a className="taxi-link" href="#taxi">her</a>)</a></p>  
             <div className={`radio-group ${errors.taxi ? "error" : ""}`}> 
               <label className="radio-label"> 
                 <input 
@@ -426,7 +431,8 @@ function App() {
       <div className="map-page-holder">
          <div className="text-group">
           <h1>Hvor skjer det?</h1>
-          <p>Bruk kartet til å se hva og hvor ting ligger. Addresse er vedlagt på vært interessepunkt</p>
+          <p>Bruk kartet til å se lokasjoner for parkering, vielse og bryllupsselskap. 
+            Trykk på interessepunkt for å se adresser.</p>
         </div>
         <Maps></Maps>
       </div>
@@ -476,15 +482,18 @@ function App() {
       <div className="info-page-holder">
         <div className="text-group">
           <h1>Informasjon</h1>
-          <p> Vi gleder oss masse til å feire oss med alle dere 04.07.2026. 
-            På denne nettsiden du enten ble henvist via papir eller internett ligger det generell informasjon om den store dagen vår.
-            Skulle det være noe informasjon du savner, gjerne ta kontakt med oss for eventuel presisering.</p>
+          <p> Vi gleder oss masse til å feire oss, med alle dere 04.07.2026. 
+            På denne nettsiden ligger det informasjon om den store dagen vår.
+            Skulle det være noe informasjon du savner, gjerne ta kontakt med oss for presisering.
+            <br></br>
+            Vielsen er åpen for alle, men i bryllupsselskapet vil det serveres alkohol og er derfor aldersbegrenset (18+).
+            </p>
         </div>
         <div className="text-group">
           <h1>Ankomst/Parkering</h1>
           <p>Det er markert på kartet lengre opp på siden hvor det er mulig å parkere. 
-            Hvis du skal kjøre bil og har plass (og ønsker) til passasjerer, kan du registrere deg her, slik at det vises nedenfor.
-            Trenger du skyss er det bare å ta kontakt med en av de på denne listen. </p>
+            Hvis du skal kjøre bil og har plass til (og ønsker) passasjerer, kan du registrere deg her, slik at det vises nedenfor.
+            Trenger du skyss er det bare å ta kontakt med en av de på listen. </p>
             <table>
           <thead>
             <tr>
@@ -549,11 +558,11 @@ function App() {
           </form>
         </div>
         <div className="text-group">
-          <p>Selskapslokalet ligger helt i enden av halvøya som bruket befinner seg på og det må beregenes rundt 500 meter på fot.
-             Anbefalt rute er markert på vedlagt kart. 
-             Det er i utgangspunktet ikke lov å kjøre inn på stien, 
-             men om du er dårlig til bens eller nervøs for at ferden blir for lang gjerne meld i fra, 
-             så finner vi ut av det.</p>
+          <p>Selskapslokalet heter Tors Plass og ligger helt i enden av halvøya som Skotfoss bruk befinner seg på. 
+            Det må beregenes rundt 500 meter til fots fra nærmeste parkeringsplass.
+            Anbefalt rute er markert på vedlagte kart. 
+            Det er i utgangspunktet ikke lov å kjøre inn på stien, 
+            men om du er dårlig til bens eller nervøs for at ferden blir for lang, gjerne meld i fra så finner vi ut av det.</p>
         </div>
         <div className="dual-image">
           <img className="map_img_1" alt="alternativ 1" src={map1}></img>
@@ -565,7 +574,7 @@ function App() {
           <p>I kirken kommer det til å være fotografer som tar flotte bilder av vielsen.
              Derfor er det ikke lov til å bruke mobiltelefon. 
              La mobilen ligge i lomma, og vær tilstede med oss i det dyrebare øyeblikket. 
-             Fotografene er profesjonelle, og vil fange stemningen gjennom linsene sine, som vi vil dele med oss i etterkant av bryllupet.
+             Fotografene er profesjonelle, og vil fange stemningen gjennom linsene sine, som deles med alle i etterkant av bryllupet.
           </p>
           <h3>Selskap og kveld</h3>
           <p>
@@ -580,7 +589,7 @@ function App() {
           <p>
             Selv om vi ikke har et utpreget tema for bryllupet, 
             ser vi for oss at stemningen blir preget av følgende 
-            stikkord: sommerfest, hagefest, picknick, festival, blomster, rustikk.
+            stikkord: sommerfest, hagefest, piknik, festival, blomster, rustikk.
             <br></br>
             <br></br>
             Til oss kan du komme som du er, og det er ikke noe som heter å pynte seg for mye!
@@ -604,14 +613,6 @@ function App() {
             </ul>
         </div>
         <div className="text-group">
-          <h1>Aktiviteter</h1>
-          <p>Gjennom dagen blir det diverse aktiviteter og kanskje litt 
-            konkurranse som vi håper dere vil være med på og sette pris på.            
-            Hvis du ønsker, er du hjertelig velkommen til å ta med andre spill 
-            og leker, som kubb, boccia, ringspill o.l.
-          </p>
-        </div>
-        <div className="text-group">
           <h1>Vakthold</h1>
           <p>Det vil være vakter tilstede hele kvelden som har vår fullmakt til å be enhver gjest som oppfører seg urimelig om å forlate festen.
             Dette forventer vi at respekteres fra første advarsel.
@@ -622,9 +623,9 @@ function App() {
         </div>
         <div className="text-group">
           <h1>Drikkeservering</h1>
-          <p>Ved ankomst til selskapslokalet vil det være klargjort velkomst-drinker, hvor man kan forsyne seg én per person
+          <p>Ved ankomst til selskapet vil det være klargjort velkomst-drinker.
               Under hele selskapet vil det også være mulig å forsyne seg med det vi har av forfriskninger. Vi førster å beregne en
-              generøs mengde pønsj, vin, øl og cider på vært hode. Det er lov å ta med eget også, men det strengt talt ikke nødvendig. 
+              generøs mengde pønsj, vin, øl og cider på vært hode. Det er lov å ta med eget også, men det er strengt talt ikke nødvendig. 
               <br></br>
               <br></br>
               Det vil også være rikelig med vann og alkoholfri drikke. 
@@ -638,15 +639,15 @@ function App() {
               <br></br>
               <br></br>
               Middagen vil bestå av mexikansk taco-buffét og serveres 16:30
-              Nattmat blir pizza og serveres 22:00
               <br></br>
+              Nattmat blir pizza og serveres 22:00
               <br></br>
               Meld i fra på innmeldingsskjema om du har allergier eller preferanser.
           </p>
         </div>
         <div className="text-group">
           <h1>Overnatting/hjemkomst</h1>
-          <h3>Hotell</h3>
+          <h2>Hotell</h2>
           <p>I Skien og Porsgrunn kan du bestille overnatting på følgende hoteller:</p>
           <ul>
             <li>Thon Hotel Høyers, Kongens gate 6, 3717 Skien</li>
@@ -656,50 +657,53 @@ function App() {
             <li>Comfort Hotel Porsgrunn, Kammerherreløkka 3, 3915 Porsgrunn</li>
             <li>Hotell Vic, Skolegata 1, 3916 Porsgrunn</li>
           </ul>
-          <h3>Telt/Camping</h3>
+          <h2 id="telt">Telt/Camping</h2>
           <p>De som ønsker å overnatte i telt, campingvogn eller hengekøye i hagen vår, er velkomne til dette.
             <br></br> 
-            Adresse: Skotfossvegen 292, hvitt murhus med én etasje.
+            Adresse: Skotfossvegen 292, hvitt murhus på ett plan.
             <br></br>
-            Det er god plass, men send oss beskjed på forhånd så vi har oversikt over hvem som kommer. 
+            Det er god plass, men helst send oss beskjed via påmeldingsskjemaet så vi har oversikt over hvem som kommer. 
             Det er ikke lov å telte på Tors plass (selskapslokalet).
-            Det er ikke lov å telte i hagen til naboen (trehuset med to etasjer).
+            Det er ikke lov å telte i hagen til naboen (trehus på to plan).
           </p>
         </div>
-        <div className="text-group">     
-          <h3>Fra Skotfoss med taxi</h3>
+        <div id="taxi" className="text-group">     
+          <h2>Fra Skotfoss med taxi</h2>
           <p>
             Vi setter opp maxi-taxier fra Skotfoss til Skien kl.23:00 og kl.02:00 
             (festen avsluttes kl.01:30). Taxien kjører fra idrettsplassen, Børrebakken 39, 3720 Skien.
-            Meld deg på nedenfor, innen 15.juni, slik at vi vet hvor mange vi skal bestille til.
-            For å forsikre oss om at påmeldte faktisk møter opp til taxien, velger vi å be om en symbolsk pris på 40kr per person. Dette kan vippses til Amanda (45884182) før bryllupet.
+            Meld deg på via påmeldingsskjemaet innen 15.mai, slik at vi vet hvor mange vi skal bestille til.
+            For å forsikre oss om at påmeldte faktisk møter opp til taxien, velger vi å be om en symbolsk pris på 40kr per person.
+            <br></br>
+            Dette kan vippses til <u><b>Eirik (478 72 489)</b></u> før bryllupet.
+            <br></br>
+            <u><b> Merk betalingen med ønsket klokkeslett. </b></u>
             <br></br>
             <br></br>
-            Taxiene kjører presis på de oppsatte tidspunktene, 
-            som betyr at du må beregne MINST 15 min gange fra Tors Plass (selskapslokalet). 
-            Dersom du kommer for sent, må du ordne egen transport på egen regning.
+            Taxiene kjører presis på de oppsatte tidspunktene.
+            Beregn <b>MINST</b> 15 min gange fra Tors Plass (selskapslokalet).
+            <br></br> 
             Dersom du melder deg på første taxi kl.23, og misser den, 
-            kan du IKKE bli med den andre kl.02. Om du ikke stoler på deg selv, 
-            kan du melde deg på begge taxiene, men da må du vippse dobbelt, 80 kr til Amanda 
-            (45884182) før bryllupet.
-            De som ikke melder seg på maxi-taxi, ordner egen transport hjem fra bryllupet selv.
+            kan du <b>IKKE</b> bli med den andre kl.02.
+            
           </p>
-          <h3>Kollektivtransport - buss</h3>
+          <h2>Kollektivtransport - buss</h2>
           <p>Bussrute P6 er eneste rute som går til og fra Skotfoss.
             <br></br>
             <br></br>
-            Aktuelle busstopp:
+            <u>Aktuelle busstopp</u>
             <br></br>
             Nærmeste til kirka: Coop Prix/Tonika frisør, busstopp “Skotfoss”
+            <br></br>
             Nærmeste til huset vårt og Tors plass (selskapslokalet): Løveid sluse, busstopp “Kanalen”
             <br></br>
             <br></br>
-            MERK: Siste buss fra Skotfoss til Skien på lørdager går fra busstopp “Kanalen” kl.21:00
+            <b>MERK:</b> Siste buss fra Skotfoss til Skien på lørdager går fra busstopp “Kanalen” kl.21:00
           </p>
           <div className="bussholder">
             <img className="bussrute" alt="Busstabell p6" src={bussrute}></img>
           </div>
-          <h3>Kollektivtransport - tog</h3>
+          <h2>Kollektivtransport - tog</h2>
           <p>Det går tog til og fra Skien stasjon, se vy.no for avganger.
             Du kan ta buss fra Skien stasjon til Skotfoss fra busstopp “Rektor Ørns gate”.
             Merk at stasjonen ligger litt i “utkanten” av bysentrum dersom du kommer med tog
