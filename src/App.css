@@ -88,11 +88,18 @@ img {
   list-style-type: none;
 }
 
+
 .menu-out-box li {
   cursor: pointer;
   font-size: 70px;
   padding-bottom: 5px;
   border-bottom: black dotted 1px;
+}
+
+@media (max-width: 700px) {
+  .menu-out-box li {
+    font-size: 50px;
+  }
 }
 
 
@@ -102,7 +109,7 @@ img {
 .frontPage {
   min-height: 100svh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-image: url("/src/media/tillegg/bryllup/bryll.png");
+  background-image: url("/src/media/tillegg/bryllup/bryllup_1.png");
   background-size: 99.5%;
   background-color: #06504A;
   background-repeat: no-repeat;
@@ -160,8 +167,8 @@ img {
     background: linear-gradient(
       to right,
       transparent,
-      rgba(6, 80, 74, 0.98) 5%,
-      rgba(6, 80, 74, 0.98) 95%,
+      rgba(6, 80, 74, 0.98) 30%,
+      rgba(6, 80, 74, 0.98) 70%,
       transparent
     );
     display: grid;
