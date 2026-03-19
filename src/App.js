@@ -87,7 +87,7 @@ function App() {
     drive_mobil: "",
     drive_sted: ""
   });
-  const [posts, setPosts] = useState([]);
+
   const [post, setPost] = useState({
     navn: "",
     folge: null,
@@ -118,7 +118,6 @@ function App() {
   } = drive;
 
   useEffect(() => {
-    fetchPosts()
     fetchDrive()
   }, [])
 
@@ -129,13 +128,6 @@ function App() {
       setDriveSuccess(false); 
   } }, [driveSuccess])
 
-  async function fetchPosts() {
-    const { data } = await supabase
-      .from('users')
-      .select()
-    setPosts(data)
-    console.log("data: ", data);
-  }
 
   async function fetchDrive() {
     const { data } = await supabase
