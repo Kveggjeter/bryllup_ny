@@ -616,7 +616,7 @@ function App() {
         <div className="text-group">
           <h1>Drikkeservering</h1>
           <p>Ved ankomst til selskapet vil det være klargjort velkomst-drinker.
-              Under hele selskapet vil det også være mulig å forsyne seg med det vi har av forfriskninger. Vi førster å beregne en
+              Under hele selskapet vil det også være mulig å forsyne seg med det vi har av forfriskninger. Vi forsøker å beregne en
               generøs mengde pønsj, vin, øl og cider på vært hode. Det er lov å ta med eget også, men det er strengt talt ikke nødvendig. 
               <br></br>
               <br></br>
@@ -643,12 +643,16 @@ function App() {
           <p>I Skien og Porsgrunn kan du bestille overnatting på følgende hoteller:</p>
           <ul>
             <li>Thon Hotel Høyers, Kongens gate 6, 3717 Skien</li>
-            <li>Henriks hotell, Prinsessegata 7, 3724 Skien</li>
             <li>Home Hotel Bryggeparken, Langbrygga 7, 3724 Skien</li>
             <li>Hotell Fritidsparken, Moflatvegen 59, 3733 Skien</li>
             <li>Comfort Hotel Porsgrunn, Kammerherreløkka 3, 3915 Porsgrunn</li>
             <li>Hotell Vic, Skolegata 1, 3916 Porsgrunn</li>
           </ul>
+          <p>Ingen av hotellene har vært særlig tilbøyelige med tanken om en samlerabatt, men Thon Hotell informerer om at de har en sommerkampanje i mai som gir 20% på bestillinger hvis man er medlem (gratis medlemskap).
+            <br></br>
+            <br></br>
+             Om du blir å overnatte på hotell trenger du ikke huke av på knappen om "behov for overnatting". Huk av knappen om du ønsker å se på muligheten til husrom på Skotfossvegen 292
+              (first come first serve for sengeplasser inne i hus, naturligvis helt gratis). </p>
           <h2 id="telt">Telt/Camping</h2>
           <p>De som ønsker å overnatte i telt, campingvogn eller hengekøye i hagen vår, er velkomne til dette.
             <br></br> 
